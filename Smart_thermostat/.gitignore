@@ -1,7 +1,7 @@
-Smart_thermostat/Smart_thermostat/x64/Debug/
-Smart_thermostat/x64/Debug/
+#Smart_thermostat/Smart_thermostat/x64/Debug/
+#Smart_thermostat/x64/Debug/
 # Ignore user-specific files
-*.vcxproj.user
+#*.vcxproj.user
 .vs/
 x64/
 
