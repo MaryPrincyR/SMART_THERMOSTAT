@@ -7,7 +7,8 @@
 
 typedef struct UART UART;
 
-struct UART {
+struct UART 
+{
     FILE* file;
 };
 
