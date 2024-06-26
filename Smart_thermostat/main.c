@@ -5,7 +5,7 @@ int main()
 {
     /*Registering specified commands*/
 
-    CommandLineInterface helpCommand = { "help", getHelp, "Display help information for commands(Format:help set)", -1 };
+    CommandLineInterface helpCommand = { "help", getHelp, "Display help information for commands(Format:help set // or help )", -1 };
     RegisterCommand(&helpCommand);
 
     CommandLineInterface setCommand = { "set", setValue, "Set temperature value (Format:set temp value)", 2 };
@@ -13,6 +13,9 @@ int main()
 
     CommandLineInterface getCommand = { "get", getValue, "Get current temperature value (Format:get temp)", 1 };
     RegisterCommand(&getCommand);
+
+    //CommandLineInterface retrieveValueCmd = { "retrieveValue", retrieveValue, "Retrieve the value of a variable", 1 };
+    //RegisterCommand(&retrieveValueCmd);
 
     CommandLineInterface scheduleTempCommand = { "scheduleTemp", scheduleTemperature, "Schedule temperature (Format:scheduleTemp value hour minute)", 3 };
     RegisterCommand(&scheduleTempCommand);

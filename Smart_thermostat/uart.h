@@ -13,7 +13,7 @@ struct UART
 };
 
 UART* uart_open(const char* device);
-size_t uart_write(UART* uart, const char* data);
+void uart_write(UART* uart, const char* command, const char* argument);
 size_t uart_read(UART* uart, char* buffer, size_t size);
 void uart_close(UART* uart);
 

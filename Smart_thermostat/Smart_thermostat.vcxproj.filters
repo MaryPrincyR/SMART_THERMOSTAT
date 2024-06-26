@@ -24,12 +24,24 @@
     <ClCompile Include="CLI.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="json.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jsmn.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="uart.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CLI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="json.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="jsmn.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

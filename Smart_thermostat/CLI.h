@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <string.h> 
 
+
 /*Define maximum number of commands and buffer lengths*/
 #define MAX_NUM_COMMANDS 10
 #define MAX_BUFFER_LENGTH 50
@@ -57,6 +58,7 @@ void userLogin();
 int scheduleTemperature(char* arguments[]);
 int setValue(char* arguments[]);
 int getValue(char* arguments[]);
+//int retrieveValue(char* arguments[]);
 int getHelp(char* arguments[]);
 
 #endif /*CLI_H*/

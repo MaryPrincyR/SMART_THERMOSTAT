@@ -1,1 +1,6 @@
-Set temp 90
+{"set": {"temp":"60"}}
+{"get": temp}
+{"set": {"temp":"65"}}
+{"get": temp}
+{"scheduleTemp": 70 3:30}
+{"get": temp}

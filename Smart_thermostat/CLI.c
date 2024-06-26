@@ -1,5 +1,6 @@
 #include "CLI.h"
 #include "uart.h"
+#include "json.h"
 
 //Initialize global variables
 CommandLineInterface CLI_Array[MAX_NUM_COMMANDS];
@@ -134,11 +135,13 @@ int setValue(char* arguments[])
             printf("Failed to open UART\n");
             return 1;
         }
+        // Split the command and its arguments
+        char* command = "set";
+        char formatted_args[128];
+        snprintf(formatted_args, sizeof(formatted_args), "{\"%s\":\"%s\"}", arguments[0], arguments[1]);
 
         // Send the 'SET' command and the desired value to the UART
-        char command[128];
-        snprintf(command, sizeof(command), "Set %s %s", arguments[0], arguments[1]);
-        uart_write(uart, command);
+        uart_write(uart, command, formatted_args);
 
         // Close the UART
         uart_close(uart);
@@ -151,8 +154,6 @@ int setValue(char* arguments[])
     }
     return 1; //Indicate that the function has not completed its job
 }
-
-
 
 int getValue(char* arguments[])
 {
@@ -165,19 +166,37 @@ int getValue(char* arguments[])
             return 1;
         }
 
-        // Send the 'GET' command to the UART
-        char command[128];
-        snprintf(command, sizeof(command), "Get %s", arguments[0]);
-        uart_write(uart, command);
+        // Split the command and its arguments
+        char* command = "get";
+        char formatted_arg[128];
+        snprintf(formatted_arg, sizeof(formatted_arg), "%s", arguments[0]);
 
-        
+        // Send the 'GET' command to the UART
+        uart_write(uart, command, formatted_arg);
 
         // Read the response from the UART
         char buffer[128];
         uart_read(uart, buffer, sizeof(buffer) - 1);
 
+        // Parse the JSON response
+        jsmntok_t tokens[128];
+        if (json_parse(buffer, tokens, sizeof(tokens) / sizeof(tokens[0])) != 0) {
+            printf("Failed to parse JSON response\n");
+            return 1;
+        }
+
+        // Get the value of the specified variable
+        char* value = json_get_value(buffer, tokens, sizeof(tokens) / sizeof(tokens[0]), arguments[0]);
+        if (value == NULL) {
+            printf("Failed to get value of variable '%s'\n", arguments[0]);
+            return 1;
+        }
+
         // Print the received value
-        printf("Current value for %s: %s\n", arguments[0], buffer);
+        printf("Current value for %s: %s\n", arguments[0], value);
+
+        // Free the value string
+        free(value);
 
         // Close the UART
         uart_close(uart);
@@ -192,6 +211,44 @@ int getValue(char* arguments[])
 }
 
 
+/*int retrieveValue(char* arguments[])
+{
+    // Open the UART device
+    UART* uart = uart_open("test.txt");
+    if (uart == NULL) {
+        printf("Failed to open UART\n");
+        return 1;
+    }
+
+    // Read the response from the UART
+    char buffer[128];
+    uart_read(uart, buffer, sizeof(buffer) - 1);
+
+    // Parse the JSON response
+    jsmntok_t tokens[128];
+    if (json_parse(buffer, tokens, sizeof(tokens) / sizeof(tokens[0])) != 0) {
+        printf("Failed to parse JSON response\n");
+        return 1;
+    }
+
+    // Get the value of the specified variable
+    char* value = json_get_value(buffer, tokens, sizeof(tokens) / sizeof(tokens[0]), arguments[0]);
+    if (value == NULL) {
+        printf("Failed to get value of variable '%s'\n", arguments[0]);
+        return 1;
+    }
+
+    // Print the received value
+    printf("Current value for %s: %s\n", arguments[0], value);
+
+    // Free the value string
+    free(value);
+
+    // Close the UART
+    uart_close(uart);
+
+    return 0;
+}*/
 
 //Command function for "help" command
 int getHelp(char* argument[])
@@ -236,11 +293,20 @@ int scheduleTemperature(char* arguments[])
         printf("Failed to open UART\n");
         return 1;
     }
+    
+    // Split the command and its arguments
+    char* command = "scheduleTemp";
+    char args[128];
+    if (arguments[0] != NULL && arguments[1] != NULL && arguments[2] != NULL) {
+        snprintf(args, sizeof(args), "%s %s:%s", arguments[0], arguments[1], arguments[2]);
 
-    // Send the 'scheduleTemp' command, the desired temperature, and the schedule time to the UART
-    char command[128];
-    snprintf(command, sizeof(command), "scheduleTemp %s %s:%s", arguments[0], arguments[1], arguments[2]);
-    uart_write(uart, command);
+        // Send the 'scheduleTemp' command, the desired temperature, and the schedule time to the UART
+        uart_write(uart, command, args);
+    }
+    else {
+        printf("Error: One or more arguments are NULL.\n");
+        return 1; // Indicate that an error occurred
+    }
 
     // Close the UART
     uart_close(uart);
