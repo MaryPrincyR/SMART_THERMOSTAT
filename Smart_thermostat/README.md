@@ -1,0 +1,5 @@
+The project aims to develop a custom protocol based on HTTP for UART communication. This protocol supports essential HTTP methods like GET and POST within the constraints of UART's serial communication. Project   includes simple authentication to ensure authorized access and the system will parse JSON payloads for data handling. A text file acts like a UART interface. The CLI interacts with the text file, simulating the behavior of a server, and handles commands to set and get temperature values, as well as schedule temperature changes. As an enhancement to this project, I plan to add encryption/decryption part in future.
+
+I had used Microsoft Visual Studio IDE to develop this project.The code is entirely written in C . 
+
+If you would like to run this code on your computer, note that the user name is "user" and password is "password".

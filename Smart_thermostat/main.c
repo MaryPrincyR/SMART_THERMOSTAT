@@ -5,20 +5,17 @@ int main()
 {
     /*Registering specified commands*/
 
-    CommandLineInterface helpCommand = { "help", getHelp, "Display help information for commands(Format:help set // or help )", -1 };
+    CommandLineInterface helpCommand = { "help", getHelp, "Display help information for commands(Format:help <command name> // or help )", -1 };
     RegisterCommand(&helpCommand);
 
-    CommandLineInterface setCommand = { "set", setValue, "Set temperature value (Format:set temp value)", 2 };
+    CommandLineInterface setCommand = { "set", setValue, "Set temperature value (Format:set temp <value>)", 2 };
     RegisterCommand(&setCommand);
 
     CommandLineInterface getCommand = { "get", getValue, "Get current temperature value (Format:get temp)", 1 };
     RegisterCommand(&getCommand);
 
-    //CommandLineInterface retrieveValueCmd = { "retrieveValue", retrieveValue, "Retrieve the value of a variable", 1 };
-    //RegisterCommand(&retrieveValueCmd);
-
-    CommandLineInterface scheduleTempCommand = { "scheduleTemp", scheduleTemperature, "Schedule temperature (Format:scheduleTemp value hour minute)", 3 };
-    RegisterCommand(&scheduleTempCommand);
+    CommandLineInterface scheduleTempCmd = { "scheduleTemp", scheduleTemperature, "Schedule a temperature change. Format: scheduleTemp <temperature> <hour> <minute> <meridiem indicator>", 4 };
+    RegisterCommand(&scheduleTempCmd);
 
     /*Command-line input processing*/
     char userInputBuffer[100];
@@ -27,7 +24,7 @@ int main()
     {
         if (loginStatus != NOT_LOGGED_IN)
         {
-            printf("\nEnter command: ");
+            printf("\nEnter command or enter Ctrl^Z to exit : ");
             if (fgets(userInputBuffer, sizeof(userInputBuffer), stdin) == NULL)
             {
                 break; /*Exit on EOF*/

@@ -18,7 +18,7 @@ int json_parse(const char* json_string, jsmntok_t* tokens, unsigned int num_toke
     jsmn_init(&parser);
 
     int ret = jsmn_parse(&parser, json_string, strlen(json_string), tokens, num_tokens);
-    printf("Parse result: %d\n", ret);  // Debug print
+    //printf("Parse result: %d\n", ret);  // Debug print
     if (ret < 0) {
         printf("Failed to parse JSON: %d\n", ret);
         return 1;
@@ -48,6 +48,11 @@ char* json_get_value(const char* json_string, jsmntok_t* tokens, unsigned int nu
             }
             strncpy(value, json_string + tokens[i + 1].start, value_length);
             value[value_length] = '\0';
+            // Remove the enclosing quotes
+            if (value[0] == '\"' && value[value_length - 1] == '\"') {
+                memmove(value, value + 1, value_length - 1);
+                value[value_length - 2] = '\0';
+            }
         }
     }
     return value;

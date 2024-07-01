@@ -5,7 +5,7 @@
 //Initialize global variables
 CommandLineInterface CLI_Array[MAX_NUM_COMMANDS];
 Variable variables[MAX_VARIABLES];
-const char* correctUsername = "Princy";
+const char* correctUsername = "user";
 const char* correctPassword = "password";
 int loginStatus = 0;
 
@@ -49,6 +49,7 @@ void ProcessCommand(const char* inputCommand, char* arguments[])
             {
                 //Call the corresponding function using function pointer
                 int result = CLI_Array[i].cmdFunction(arguments);
+                /*
                 if (result == 0)
                 {
                     printf("Command executed successfully.\n");
@@ -56,7 +57,8 @@ void ProcessCommand(const char* inputCommand, char* arguments[])
                 else
                 {
                     printf("Command did not complete successfully.\n");
-                }
+                }*/
+
                 return;
             }
             else
@@ -91,6 +93,40 @@ void userLogin()
     char username[MAX_USERNAME_LENGTH];
     char password[MAX_PASSWORD_LENGTH];
 
+    //Code for printing the title of the project
+
+    char* title = "SMART THERMOSTAT";
+    int lineLength = 120;  // Length of the asterisk line
+    int titleLength = strlen(title);
+
+    // Calculate the padding needed on each side of the title
+    int padding = (lineLength - titleLength) / 2;
+
+    // Print the top asterisk line
+    for (int j = 0; j < lineLength; j++) {
+        printf("*");
+    }
+    printf("\n");
+
+    // Print the title line with padding
+    for (int j = 0; j < padding; j++) {
+        printf(" ");
+    }
+    printf("%s", title);
+    for (int j = 0; j < padding; j++) {
+        printf(" ");
+    }
+    printf("\n");
+
+    // Print the bottom asterisk line
+    for (int i = 0; i < lineLength; i++) {
+        printf("*");
+    }
+    printf("\n");
+
+    //-----end of title code------
+
+
     printf("Enter your username: ");
     fgets(username, sizeof(username), stdin);
 
@@ -124,24 +160,37 @@ void userLogin()
     }
 }
 
-
-int setValue(char* arguments[])
-{
+int setValue(char* arguments[]) {
     if (loginStatus)
     {
         // Open the UART device
-        UART* uart = uart_open("test.txt");
+        UART* uart = uart_open("thermostat.txt");
         if (uart == NULL) {
             printf("Failed to open UART\n");
             return 1;
         }
-        // Split the command and its arguments
-        char* command = "set";
+
+        // Prepare the HTTP-like request
+        char method[] = "POST";
+        char path[128];
+        snprintf(path, sizeof(path), "/set?%s=%s", arguments[0], arguments[1]);
+        char host[] = "localhost";
+        char body[] = "";
+
+        // Print the HTTP-like request to the output window
+        printf("%s %s HTTP/1.1\r\nHost: %s\r\n\r\n%s\r\n", method, path, host, body);
+
+        // Write the command and its arguments to the UART
         char formatted_args[128];
         snprintf(formatted_args, sizeof(formatted_args), "{\"%s\":\"%s\"}", arguments[0], arguments[1]);
+        uart_write(uart, "set", formatted_args);
 
-        // Send the 'SET' command and the desired value to the UART
-        uart_write(uart, command, formatted_args);
+        // Print a user-friendly message to the output window
+        printf("\n");
+        printf("********************************************\n");
+        printf("Setting temperature to %s.\n", arguments[1]);
+        printf("********************************************\n");
+        printf("\n");
 
         // Close the UART
         uart_close(uart);
@@ -155,27 +204,28 @@ int setValue(char* arguments[])
     return 1; //Indicate that the function has not completed its job
 }
 
-int getValue(char* arguments[])
-{
+int getValue(char* arguments[]) {
     if (loginStatus)
     {
         // Open the UART device
-        UART* uart = uart_open("test.txt");
+        UART* uart = uart_open("thermostat.txt");
         if (uart == NULL) {
             printf("Failed to open UART\n");
             return 1;
         }
 
-        // Split the command and its arguments
-        char* command = "get";
-        char formatted_arg[128];
-        snprintf(formatted_arg, sizeof(formatted_arg), "%s", arguments[0]);
+        // Prepare the HTTP-like request
+        char method[] = "GET";
+        char path[128];
+        snprintf(path, sizeof(path), "/get?%s", arguments[0]);
+        char host[] = "localhost";
+        char body[] = "";
 
-        // Send the 'GET' command to the UART
-        uart_write(uart, command, formatted_arg);
+        // Print the HTTP-like request to the output window
+        printf("%s %s HTTP/1.1\r\nHost: %s\r\n\r\n%s\r\n", method, path, host, body);
 
-        // Read the response from the UART
-        char buffer[128];
+        // Read the value from the UART
+        char buffer[1024];
         uart_read(uart, buffer, sizeof(buffer) - 1);
 
         // Parse the JSON response
@@ -193,8 +243,12 @@ int getValue(char* arguments[])
         }
 
         // Print the received value
-        printf("Current value for %s: %s\n", arguments[0], value);
-
+        printf("HTTP/1.1 200 OK\r\nContent-Type: application/json\r\n\r\n{\"%s\": \"%s\"}\n", arguments[0], value);
+        printf("\n");
+        printf("********************************************\n");
+        printf("Current temperature is %s.\n", value);
+        printf("********************************************\n");
+        printf("\n");
         // Free the value string
         free(value);
 
@@ -209,46 +263,6 @@ int getValue(char* arguments[])
     }
     return 1; //Indicate that the function has not completed its job
 }
-
-
-/*int retrieveValue(char* arguments[])
-{
-    // Open the UART device
-    UART* uart = uart_open("test.txt");
-    if (uart == NULL) {
-        printf("Failed to open UART\n");
-        return 1;
-    }
-
-    // Read the response from the UART
-    char buffer[128];
-    uart_read(uart, buffer, sizeof(buffer) - 1);
-
-    // Parse the JSON response
-    jsmntok_t tokens[128];
-    if (json_parse(buffer, tokens, sizeof(tokens) / sizeof(tokens[0])) != 0) {
-        printf("Failed to parse JSON response\n");
-        return 1;
-    }
-
-    // Get the value of the specified variable
-    char* value = json_get_value(buffer, tokens, sizeof(tokens) / sizeof(tokens[0]), arguments[0]);
-    if (value == NULL) {
-        printf("Failed to get value of variable '%s'\n", arguments[0]);
-        return 1;
-    }
-
-    // Print the received value
-    printf("Current value for %s: %s\n", arguments[0], value);
-
-    // Free the value string
-    free(value);
-
-    // Close the UART
-    uart_close(uart);
-
-    return 0;
-}*/
 
 //Command function for "help" command
 int getHelp(char* argument[])
@@ -285,34 +299,46 @@ int getHelp(char* argument[])
 }
 
 // Function to handle the 'scheduleTemp' command
-int scheduleTemperature(char* arguments[]) 
-{
-    // Open the UART device
-    UART* uart = uart_open("test.txt");
-    if (uart == NULL) {
-        printf("Failed to open UART\n");
-        return 1;
-    }
-    
-    // Split the command and its arguments
-    char* command = "scheduleTemp";
-    char args[128];
-    if (arguments[0] != NULL && arguments[1] != NULL && arguments[2] != NULL) {
-        snprintf(args, sizeof(args), "%s %s:%s", arguments[0], arguments[1], arguments[2]);
+int scheduleTemperature(char* arguments[]) {
+    if (loginStatus)
+    {
+        // Prepare the HTTP-like request
+        char method[] = "POST";
+        char path[128];
+        snprintf(path, sizeof(path), "/scheduleTemp?temperature=%s&time=%s:%s&meridiem=%s", arguments[0], arguments[1], arguments[2], arguments[3]);
+        char host[] = "localhost";
+        char body[] = "";
 
-        // Send the 'scheduleTemp' command, the desired temperature, and the schedule time to the UART
-        uart_write(uart, command, args);
-    }
-    else {
-        printf("Error: One or more arguments are NULL.\n");
-        return 1; // Indicate that an error occurred
-    }
+        // Print the HTTP-like request to the output window
+        printf("%s %s HTTP/1.1\r\nHost: %s\r\n\r\n%s\r\n", method, path, host, body);
 
-    // Close the UART
-    uart_close(uart);
+        // Open the UART device
+        UART* uart = uart_open("thermostat.txt");
+        if (uart == NULL) {
+            printf("Failed to open UART\n");
+            return 1;
+        }
 
-    return 0;
+        // Write the command and its arguments to the UART
+        char formatted_args[128];
+        snprintf(formatted_args, sizeof(formatted_args), "{\"temperature\": %s, \"time\": \"%s:%s\", \"meridiem\": \"%s\"}", arguments[0], arguments[1], arguments[2], arguments[3]);
+        uart_write(uart, "scheduleTemp", formatted_args);
+        printf("\n");
+        printf("****************************************************************\n");
+        printf("Temperature change scheduled for %s degrees at %s:%s %s.\n", arguments[0], arguments[1], arguments[2], arguments[3]);
+        printf("****************************************************************\n");
+        printf("\n");
+
+        // Close the UART
+        uart_close(uart);
+
+        return 0; //Indicate that the function has completed its job
+    }
+    else
+    {
+        printf("Please log in first.\n");
+    }
+    return 1; //Indicate that the function has not completed its job
 }
-
 
 

@@ -1,0 +1,5 @@
+{"set": {"temp":"70"}}
+{"set": {"temp":"20"}}
+{"scheduleTemp": {"temperature": 60, "time": "4:45", "meridiem": "am"}}
+{"set": {"temp":"60"}}
+{"scheduleTemp": {"temperature": 70, "time": "3:30", "meridiem": "am"}}

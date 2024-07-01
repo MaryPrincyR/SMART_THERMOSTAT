@@ -10,8 +10,8 @@ UART* uart_open(const char* device)
         return NULL;
     }
 
-    errno_t err = fopen_s(&uart->file, device, "a+");
-    //errno_t err = fopen_s(&uart->file, device, "r+");
+    //errno_t err = fopen_s(&uart->file, device, "a+");
+    errno_t err = fopen_s(&uart->file, device, "r+");
     if (err != 0 || uart->file == NULL) 
     {
         fprintf(stderr, "Failed to open file: %s\n", strerror(err));
@@ -44,7 +44,7 @@ size_t uart_read(UART* uart, char* buffer, size_t size) {
 
     size_t bytesRead = fread(buffer, sizeof(char), size, uart->file);
     buffer[bytesRead] = '\0';
-    printf("Read: '%s'\n", buffer);  // Debug print
+    //printf("Read: '%s'\n", buffer);  // Debug print
     return bytesRead;
 }
 

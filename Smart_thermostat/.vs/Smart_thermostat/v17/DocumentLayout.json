@@ -3,24 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\mailt\\source\\repos\\SMART_THERMOSTAT\\Smart_thermostat\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4CB3AF4A-3B51-41BD-B797-B490B6FE8C47}|Smart_thermostat.vcxproj|C:\\Users\\mailt\\source\\repos\\SMART_THERMOSTAT\\Smart_thermostat\\uart.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4CB3AF4A-3B51-41BD-B797-B490B6FE8C47}|Smart_thermostat.vcxproj|solutionrelative:uart.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4CB3AF4A-3B51-41BD-B797-B490B6FE8C47}|Smart_thermostat.vcxproj|C:\\Users\\mailt\\source\\repos\\SMART_THERMOSTAT\\Smart_thermostat\\main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4CB3AF4A-3B51-41BD-B797-B490B6FE8C47}|Smart_thermostat.vcxproj|solutionrelative:main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4CB3AF4A-3B51-41BD-B797-B490B6FE8C47}|Smart_thermostat.vcxproj|C:\\Users\\mailt\\source\\repos\\SMART_THERMOSTAT\\Smart_thermostat\\CLI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4CB3AF4A-3B51-41BD-B797-B490B6FE8C47}|Smart_thermostat.vcxproj|solutionrelative:CLI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4CB3AF4A-3B51-41BD-B797-B490B6FE8C47}|Smart_thermostat.vcxproj|C:\\Users\\mailt\\source\\repos\\SMART_THERMOSTAT\\Smart_thermostat\\CLI.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{4CB3AF4A-3B51-41BD-B797-B490B6FE8C47}|Smart_thermostat.vcxproj|solutionrelative:CLI.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4CB3AF4A-3B51-41BD-B797-B490B6FE8C47}|Smart_thermostat.vcxproj|C:\\Users\\mailt\\source\\repos\\SMART_THERMOSTAT\\Smart_thermostat\\jsmn.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4CB3AF4A-3B51-41BD-B797-B490B6FE8C47}|Smart_thermostat.vcxproj|solutionrelative:jsmn.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4CB3AF4A-3B51-41BD-B797-B490B6FE8C47}|Smart_thermostat.vcxproj|C:\\Users\\mailt\\source\\repos\\SMART_THERMOSTAT\\Smart_thermostat\\json.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -31,12 +15,36 @@
       "RelativeMoniker": "D:0:0:{4CB3AF4A-3B51-41BD-B797-B490B6FE8C47}|Smart_thermostat.vcxproj|solutionrelative:json.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{4CB3AF4A-3B51-41BD-B797-B490B6FE8C47}|Smart_thermostat.vcxproj|C:\\Users\\mailt\\source\\repos\\SMART_THERMOSTAT\\Smart_thermostat\\main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4CB3AF4A-3B51-41BD-B797-B490B6FE8C47}|Smart_thermostat.vcxproj|solutionrelative:main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4CB3AF4A-3B51-41BD-B797-B490B6FE8C47}|Smart_thermostat.vcxproj|C:\\Users\\mailt\\source\\repos\\SMART_THERMOSTAT\\Smart_thermostat\\uart.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{4CB3AF4A-3B51-41BD-B797-B490B6FE8C47}|Smart_thermostat.vcxproj|solutionrelative:uart.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{4CB3AF4A-3B51-41BD-B797-B490B6FE8C47}|Smart_thermostat.vcxproj|C:\\Users\\mailt\\source\\repos\\SMART_THERMOSTAT\\Smart_thermostat\\CLI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4CB3AF4A-3B51-41BD-B797-B490B6FE8C47}|Smart_thermostat.vcxproj|solutionrelative:CLI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4CB3AF4A-3B51-41BD-B797-B490B6FE8C47}|Smart_thermostat.vcxproj|C:\\Users\\mailt\\source\\repos\\SMART_THERMOSTAT\\Smart_thermostat\\uart.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4CB3AF4A-3B51-41BD-B797-B490B6FE8C47}|Smart_thermostat.vcxproj|solutionrelative:uart.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4CB3AF4A-3B51-41BD-B797-B490B6FE8C47}|Smart_thermostat.vcxproj|C:\\Users\\mailt\\source\\repos\\SMART_THERMOSTAT\\Smart_thermostat\\jsmn.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{4CB3AF4A-3B51-41BD-B797-B490B6FE8C47}|Smart_thermostat.vcxproj|solutionrelative:jsmn.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4CB3AF4A-3B51-41BD-B797-B490B6FE8C47}|Smart_thermostat.vcxproj|C:\\Users\\mailt\\source\\repos\\SMART_THERMOSTAT\\Smart_thermostat\\jsmn.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4CB3AF4A-3B51-41BD-B797-B490B6FE8C47}|Smart_thermostat.vcxproj|solutionrelative:jsmn.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4CB3AF4A-3B51-41BD-B797-B490B6FE8C47}|Smart_thermostat.vcxproj|C:\\Users\\mailt\\source\\repos\\SMART_THERMOSTAT\\Smart_thermostat\\http.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4CB3AF4A-3B51-41BD-B797-B490B6FE8C47}|Smart_thermostat.vcxproj|solutionrelative:http.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4CB3AF4A-3B51-41BD-B797-B490B6FE8C47}|Smart_thermostat.vcxproj|C:\\Users\\mailt\\source\\repos\\SMART_THERMOSTAT\\Smart_thermostat\\http.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4CB3AF4A-3B51-41BD-B797-B490B6FE8C47}|Smart_thermostat.vcxproj|solutionrelative:http.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,37 +54,60 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 10,
+              "Title": "http.h",
+              "DocumentMoniker": "C:\\Users\\mailt\\source\\repos\\SMART_THERMOSTAT\\Smart_thermostat\\http.h",
+              "RelativeDocumentMoniker": "http.h",
+              "ToolTip": "C:\\Users\\mailt\\source\\repos\\SMART_THERMOSTAT\\Smart_thermostat\\http.h",
+              "RelativeToolTip": "http.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-07-01T00:01:21.374Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "http.c",
+              "DocumentMoniker": "C:\\Users\\mailt\\source\\repos\\SMART_THERMOSTAT\\Smart_thermostat\\http.c",
+              "RelativeDocumentMoniker": "http.c",
+              "ToolTip": "C:\\Users\\mailt\\source\\repos\\SMART_THERMOSTAT\\Smart_thermostat\\http.c",
+              "RelativeToolTip": "http.c",
+              "ViewState": "AQIAADkAAAAAAAAAAAAAABQAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-07-01T00:01:05.957Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "CLI.c",
               "DocumentMoniker": "C:\\Users\\mailt\\source\\repos\\SMART_THERMOSTAT\\Smart_thermostat\\CLI.c",
               "RelativeDocumentMoniker": "CLI.c",
               "ToolTip": "C:\\Users\\mailt\\source\\repos\\SMART_THERMOSTAT\\Smart_thermostat\\CLI.c",
               "RelativeToolTip": "CLI.c",
-              "ViewState": "AQIAAOsAAAAAAAAAAAAAAPgAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADsBAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2024-06-12T18:33:13.901Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "json.c",
               "DocumentMoniker": "C:\\Users\\mailt\\source\\repos\\SMART_THERMOSTAT\\Smart_thermostat\\json.c",
               "RelativeDocumentMoniker": "json.c",
               "ToolTip": "C:\\Users\\mailt\\source\\repos\\SMART_THERMOSTAT\\Smart_thermostat\\json.c",
               "RelativeToolTip": "json.c",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAALAAAA",
+              "ViewState": "AQIAACYAAAAAAAAAAAAnwDIAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-06-22T22:18:35.295Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-22T22:18:35.295Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "json.h",
               "DocumentMoniker": "C:\\Users\\mailt\\source\\repos\\SMART_THERMOSTAT\\Smart_thermostat\\json.h",
               "RelativeDocumentMoniker": "json.h",
@@ -84,86 +115,79 @@
               "RelativeToolTip": "json.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-06-22T22:18:22.727Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-22T22:18:22.727Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "main.c",
               "DocumentMoniker": "C:\\Users\\mailt\\source\\repos\\SMART_THERMOSTAT\\Smart_thermostat\\main.c",
               "RelativeDocumentMoniker": "main.c",
               "ToolTip": "C:\\Users\\mailt\\source\\repos\\SMART_THERMOSTAT\\Smart_thermostat\\main.c",
               "RelativeToolTip": "main.c",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAAAAEAAAASAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-06-09T02:18:18.084Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-09T02:18:18.084Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "uart.h",
               "DocumentMoniker": "C:\\Users\\mailt\\source\\repos\\SMART_THERMOSTAT\\Smart_thermostat\\uart.h",
               "RelativeDocumentMoniker": "uart.h",
               "ToolTip": "C:\\Users\\mailt\\source\\repos\\SMART_THERMOSTAT\\Smart_thermostat\\uart.h",
               "RelativeToolTip": "uart.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-06-09T02:12:49.323Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-09T02:12:49.323Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "CLI.h",
               "DocumentMoniker": "C:\\Users\\mailt\\source\\repos\\SMART_THERMOSTAT\\Smart_thermostat\\CLI.h",
               "RelativeDocumentMoniker": "CLI.h",
               "ToolTip": "C:\\Users\\mailt\\source\\repos\\SMART_THERMOSTAT\\Smart_thermostat\\CLI.h",
               "RelativeToolTip": "CLI.h",
-              "ViewState": "AQIAADEAAAAAAAAAAAAAADwAAAACAAAA",
+              "ViewState": "AQIAACkAAAAAAAAAAAAYwC0AAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-06-12T18:33:38.201Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-12T18:33:38.201Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "uart.c",
               "DocumentMoniker": "C:\\Users\\mailt\\source\\repos\\SMART_THERMOSTAT\\Smart_thermostat\\uart.c",
               "RelativeDocumentMoniker": "uart.c",
               "ToolTip": "C:\\Users\\mailt\\source\\repos\\SMART_THERMOSTAT\\Smart_thermostat\\uart.c",
               "RelativeToolTip": "uart.c",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAAAAAA",
+              "ViewState": "AQIAACAAAAAAAAAAAAAnwCwAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-06-09T02:12:33.974Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-09T02:12:33.974Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "jsmn.h",
               "DocumentMoniker": "C:\\Users\\mailt\\source\\repos\\SMART_THERMOSTAT\\Smart_thermostat\\jsmn.h",
               "RelativeDocumentMoniker": "jsmn.h",
               "ToolTip": "C:\\Users\\mailt\\source\\repos\\SMART_THERMOSTAT\\Smart_thermostat\\jsmn.h",
               "RelativeToolTip": "jsmn.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgBAAAAAAAA",
+              "ViewState": "AQIAAAUBAAAAAAAAAAAAABABAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-06-22T22:33:35.967Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-22T22:33:35.967Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "jsmn.c",
               "DocumentMoniker": "C:\\Users\\mailt\\source\\repos\\SMART_THERMOSTAT\\Smart_thermostat\\jsmn.c",
               "RelativeDocumentMoniker": "jsmn.c",
               "ToolTip": "C:\\Users\\mailt\\source\\repos\\SMART_THERMOSTAT\\Smart_thermostat\\jsmn.c",
               "RelativeToolTip": "jsmn.c",
-              "ViewState": "AQIAALUAAAAAAAAAAAAnwLkAAAAwAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-06-24T16:05:24.145Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-24T16:05:24.145Z"
             }
           ]
         }
